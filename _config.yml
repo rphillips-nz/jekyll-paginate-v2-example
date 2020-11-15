@@ -1,0 +1,28 @@
+title: Paginate Example
+baseurl: "" # the subpath of your site, e.g. /blog
+url: "" # the base hostname & protocol for your site, e.g. http://example.com
+
+plugins:
+  - jekyll-feed
+  - jekyll-paginate-v2
+
+header_pages:
+  - index.md
+  - about.md
+  - fruit.md
+
+defaults:
+  - scope:
+      path: ''
+      type: posts
+    values:
+      permalink: /:year/:month/:title.html
+
+pagination:
+  enabled: true
+  per_page: 3
+  permalink: '/page/:num/'
+  title: ':title - page :num'
+  limit: 0
+  sort_field: 'date'
+  sort_reverse: true

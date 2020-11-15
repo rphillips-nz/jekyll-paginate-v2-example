@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>{{ page.title }} | {{ site.title }}</title>
+
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/water.css@2/out/water.css">
+</head>
+<body>
+	<header>
+		<h1>{{ site.title }}</h1>
+
+		<nav class="site-nav">
+			<ul>
+				<li><a href="/">All</a></li>
+				<li><a href="/food/">Food</a></li>
+				<li><a href="/fruit/">Fruit</a></li>
+				<li><a href="/baking/">Baking</a></li>
+				<li><a href="/food-and-baking/">Food and Baking</a></li>
+			</ul>
+		</nav>
+	</header>
+
+	<main>
+		{%- if page.title -%}
+			<h2>{{ page.title }}</h2>
+		{%- endif -%}
+
+		{{ content }}
+	</main>
+</body>
+</html>

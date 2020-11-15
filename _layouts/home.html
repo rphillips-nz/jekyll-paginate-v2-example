@@ -1,0 +1,27 @@
+---
+layout: default
+---
+
+{{ content | markdownify }}
+
+<ul>
+	{% for post in paginator.posts %}
+		<li>
+			<a href="{{ post.url | relative_url }}">{{ post.title | escape }}</a>
+		</li>
+	{% endfor %}
+</ul>
+
+{% if paginator.total_pages > 1 %}
+	<ul>
+		{% if paginator.previous_page %}
+			<li><a href="{{ paginator.previous_page_path | prepend: site.baseurl | replace: '//', '/' }}">&larr; Newer Posts</a></li>
+		{% endif %}
+
+		{% if paginator.next_page %}
+			<li><a href="{{ paginator.next_page_path | prepend: site.baseurl | replace: '//', '/' }}">Older Posts &rarr;</a></li>
+		{% endif %}
+	</ul>
+{% endif %}
+
+<p>Subscribe <a href="{{ "/feed.xml" | relative_url }}">via RSS</a></p>
